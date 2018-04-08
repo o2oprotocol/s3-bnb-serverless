@@ -21,8 +21,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "serverless-devops.o2oprotocol.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: smartbiz
 github_username:  o2oprotocol
-chatbot_url: "https://m.me/o2oprotocol"
 
+github_repo: "https://github.com/o2oprotocol/serverless-devops"
+chatbot_url: "https://m.me/o2oprotocol"
 google_analytics: "UA-116921051-1"
 
 collections:
