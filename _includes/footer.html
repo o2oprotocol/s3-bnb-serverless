@@ -1,0 +1,49 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="link-list">
+          <li class="site-title">
+            {{ site.title | escape }}
+          </li>
+          <li><a class="page-link" href="/#table-of-contents">Table of Contents</a></li>
+          <li><a class="page-link" href="{% link about.md %}">About us</a></li>
+          <li><a class="page-link" href="{% link sponsors.md %}">Sponsors</a></li>
+          <li><a class="page-link" href="{{ site.twitter_url }}">Twitter</a></li>
+          <li><a class="page-link" href="{{ site.github_repo }}">GitHub</a></li>
+          {% if site.email %}
+          <li><a class="email-link" href="mailto:{{ site.email }}">Email</a></li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="contact-list">
+          <li class="site-description">Open source guide to building full-stack apps using Serverless and React</li>
+          <li class="site-author">Developed by <a href="https://o2oprotocol.io">O2O Protocol</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+{% if jekyll.environment == 'production' %}
+<!--
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/58b60cd55b8fe5150ee934ea/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+-->
+{% endif %}
