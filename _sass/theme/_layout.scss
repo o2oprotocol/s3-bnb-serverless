@@ -203,7 +203,7 @@
  * Page content
  */
 .page-content {
-  padding: 2 * $spacing-unit 0;
+  padding: 1 * $spacing-unit 0;
 
   @include media-query($on-palm) {
     padding: $spacing-unit - 5px 0;

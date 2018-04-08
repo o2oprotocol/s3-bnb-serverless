@@ -13,14 +13,15 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: guide for building and deploying full-stack apps using Serverless and React on AWS.
+title: Serverless & React on AWS
 email: o2oprotocol101@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Open guideline for building and deploying full-stack apps using Serverless and React on AWS.
+  Full-stack Apps using Serverless and React on AWS.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "serverless-devops.o2oprotocol.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: smartbiz
 github_username:  o2oprotocol
+chatbot_url: "https://m.me/o2oprotocol"
 
 google_analytics: "UA-116921051-1"
 
@@ -31,7 +32,7 @@ collections:
 # Build settings
 markdown: kramdown
 #theme: minima
-gems:
+pluginss:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-redirect-from
