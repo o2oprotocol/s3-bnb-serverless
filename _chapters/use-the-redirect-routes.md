@@ -39,6 +39,6 @@ So the following routes in `src/Routes.js` would be affected.
 
 And now if we tried to load a note page while not logged in, we would be redirected to the login page with a reference to the note page.
 
-![Note page redirected to login screenshot](/assets/note-page-redirected-to-login.png)
+![Note page redirected to login screenshot](/assets/listing-page-redirected-to-login.png)
 
 Next, we are going to use the reference to redirect to the note page after we login.

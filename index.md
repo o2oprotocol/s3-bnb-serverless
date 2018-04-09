@@ -25,6 +25,13 @@ description: Free step-by-step guideline for creating full-stack apps with Serve
 
 ### TODO
 
+### Deploying the Backend
+
+- [Deploy the APIs]({% link _chapters/deploy-the-apis.md %})
+- [Create a Cognito identity pool]({% link _chapters/create-a-cognito-identity-pool.md %})
+  - [Cognito user pool vs identity pool]({% link _chapters/cognito-user-pool-vs-identity-pool.md %})
+- [Test the APIs]({% link _chapters/test-the-apis.md %})
+
 ### Setting up a React App
 
 - [Create a new React.js app]({% link _chapters/create-a-new-reactjs-app.md %})
@@ -75,3 +82,27 @@ description: Free step-by-step guideline for creating full-stack apps with Serve
 - [Deploy updates]({% link _chapters/deploy-updates.md %})
   - [Update the app]({% link _chapters/update-the-app.md %})
   - [Deploy again]({% link _chapters/deploy-again.md %})
+
+### Advanced Topics
+
+Backend
+
+  - [API Gateway and Lambda Logs]({% link _chapters/api-gateway-and-lambda-logs.md %})
+  - [Debugging Serverless API Issues]({% link _chapters/debugging-serverless-api-issues.md %})
+
+  - [Serverless environment variables]({% link _chapters/serverless-environment-variables.md %})
+  - [Stages in Serverless Framework]({% link _chapters/stages-in-serverless-framework.md %})
+
+  - [Configure multiple AWS profiles]({% link _chapters/configure-multiple-aws-profiles.md %})
+
+  - [Customize the Serverless IAM Policy]({% link _chapters/customize-the-serverless-iam-policy.md %})
+
+Frontend
+
+  - [Code Splitting in Create React App]({% link _chapters/code-splitting-in-create-react-app.md %})
+  - [Environments in Create React App]({% link _chapters/environments-in-create-react-app.md %})
+
+### Reference
+
+- [Connect to API Gateway with IAM auth]({% link _chapters/connect-to-api-gateway-with-iam-auth.md %})
+- [Serverless Node.js Starter]({% link _chapters/serverless-nodejs-starter.md %})
