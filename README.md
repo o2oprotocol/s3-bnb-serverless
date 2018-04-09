@@ -8,7 +8,7 @@
 
 We are going to create a [DApp-Boilerplate](https://github.com/o2oprotocol/dapp-boilerplate) from scratch using React.js, AWS Lambda, API Gateway, DynamoDB, and Cognito.
 
-![Real Estate DApp](assets/realestate.png)
+![Real Estate DApp](assets/react/realestate.png)
 
 This is a React Boilerplate for Ethereum DApp; also cover how add User Authentication and handle File Uploads.
 
