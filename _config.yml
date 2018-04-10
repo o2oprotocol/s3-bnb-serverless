@@ -54,3 +54,4 @@ defaults:
       path: ""
     values:
       image: /assets/O2O.png
+theme: jekyll-theme-hacker
