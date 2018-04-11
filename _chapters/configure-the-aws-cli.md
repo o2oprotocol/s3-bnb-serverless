@@ -14,13 +14,21 @@ To make it easier to work with a lot of the AWS services, we are going to use th
 AWS CLI needs Python 2 version 2.6.5+ or Python 3 version 3.3+ and [Pip](https://pypi.python.org/pypi/pip). 
 
 ``` bash
+apt-get update                     &&
+apt-get install --yes python       &&
+apt-get install --yes python-pip   &&
+python --version     			         &&
+pip --version
 ```
 
 <img class="code-marker" src="/assets/s.png" />Now using Pip you can install the AWS CLI (on Linux, macOS, or Unix) by running:
 
 ``` bash
 // $ sudo pip install awscli
-sudo pip3 install awscli
+$ export LC_ALL=C  &&  pip install awscli --upgrade --user
+
+// MacOS: 
+$ brew install awscli
 ```
 
 If you are having some problems installing the AWS CLI or need Windows install instructions, refer to the [complete install instructions](http://docs.aws.amazon.com/cli/latest/userguide/installing.html).
