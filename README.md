@@ -16,3 +16,11 @@ This is a React Boilerplate for Ethereum DApp; also cover how add User Authentic
 
 - [Backend Serverless API](https://github.com/o2oprotocol/o2o-serverless)
 - [Frontend React app](https://github.com/o2oprotocol/dapp-boilerplate)
+
+### [Production Build](https://serverless-devops.o2oprotocol.io)
+
+  ```
+   cd serverless-devops &&
+   JEKYLL_ENV=production bundle exec jekyll build &&
+   s3_website push --config-dir .
+  ```  
