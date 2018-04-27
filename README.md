@@ -4,7 +4,7 @@
 
 ------------------------------------------------------------------------------------
 
-[Serverless Stack](https://serverless-devops.o2oprotocol.io) is an open source guide for building and deploying full-stack apps using Serverless and React on AWS.
+[Serverless-DevOps Stack](http://serverless-devops.s3-website-us-east-1.amazonaws.com/) is an open source guide for building and deploying full-stack apps using Serverless and React on AWS.
 
 We are going to create a [DApp-Boilerplate](https://github.com/o2oprotocol/dapp-boilerplate) from scratch using React.js, AWS Lambda, API Gateway, DynamoDB, and Cognito.
 
