@@ -17,12 +17,12 @@ title: Serverless & React on AWS
 email: o2oprotocol101@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Full-stack Apps using Serverless and React on AWS.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "serverless-devops.o2oprotocol.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/s3-bnb-serverless" # the subpath of your site, e.g. /blog
+url: "s3-bnb.s3-website-us-east-1.amazonaws.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: smartbiz
 github_username:  o2oprotocol
 
-github_repo: "https://github.com/o2oprotocol/serverless-devops"
+github_repo: "https://github.com/o2oprotocol/s3-bnb-serverless.git"
 chatbot_url: "https://m.me/o2oprotocol"
 google_analytics: "UA-116921051-1"
 
@@ -53,5 +53,5 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/O2O.png
+      image: /s3-bnb-serverless/assets/O2O.png
 # theme: jekyll-theme-hacker

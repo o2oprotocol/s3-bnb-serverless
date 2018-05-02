@@ -8,8 +8,8 @@
           <li class="site-title">
             {{ site.title | escape }}
           </li>
-          <li><a class="page-link" href="/#table-of-contents">Table of Contents</a></li>
-          <li><a class="page-link" href="{% link about.md %}">About us</a></li>
+          <li><a class="page-link" href="{{ site.baseurl }}/#table-of-contents">Table of Contents</a></li>
+          <li><a class="page-link" href="{{ site.baseurl }}{% link about.md %}">About us</a></li>
         </ul>
       </div>
 
@@ -34,7 +34,7 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
-s1.src='https://embed.tawk.to/58b60cd55b8fe5150ee934ea/default';
+s1.src='https://embed.tawk.to/5ae92edf5f7cdf4f0533c652/default';
 s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);

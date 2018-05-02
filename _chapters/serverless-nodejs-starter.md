@@ -52,7 +52,7 @@ const message = ({ time, ...rest }) => new Promise((resolve, reject) =>
 
 ### Requirements
 
-- [Configure your AWS CLI]({% link _chapters/configure-the-aws-cli.md %})
+- [Configure your AWS CLI]({{ site.baseurl }}{% link _chapters/configure-the-aws-cli.md %})
 - Install the Serverless Framework `npm install serverless -g`
 
 ### Installation

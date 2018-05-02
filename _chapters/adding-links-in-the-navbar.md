@@ -9,7 +9,7 @@ comments_id: 35
 
 Now that we have our first route set up, let's add a couple of links to the navbar of our app. These will direct users to login or signup for our app when they first visit it.
 
-<img class="code-marker" src="/assets/s.png" />Replace the `render` method in `src/App.js` with the following.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Replace the `render` method in `src/App.js` with the following.
 
 ``` coffee
 render() {
@@ -39,7 +39,7 @@ This adds two links to our navbar using the `NavItem` Bootstrap component. The `
 
 And let's include the necessary components in the header.
 
-<img class="code-marker" src="/assets/s.png" />Replace the `react-router-dom` and `react-bootstrap` import in `src/App.js` with this.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Replace the `react-router-dom` and `react-bootstrap` import in `src/App.js` with this.
 
 ``` coffee
 import { Link } from "react-router-dom";
@@ -48,25 +48,25 @@ import { Nav, Navbar, NavItem } from "react-bootstrap";
 
 Now if you flip over to your browser, you should see the two links in our navbar.
 
-![Navbar links added screenshot](/assets/react/navbar-links-added.png)
+![Navbar links added screenshot]({{ site.baseurl }}/assets/react/navbar-links-added.png)
 
 Unfortunately, when you click on them they refresh your browser while redirecting to the link. We need it to route it to the new link without refreshing the page since we are building a single page app.
 
 To fix this we need a component that works with React Router and React Bootstrap called [React Router Bootstrap](https://github.com/react-bootstrap/react-router-bootstrap). It can wrap around your `Navbar` links and use the React Router to route your app to the required link without refreshing the browser.
 
-<img class="code-marker" src="/assets/s.png" />Run the following command in your working directory.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Run the following command in your working directory.
 
 ``` bash
 $ npm install react-router-bootstrap --save
 ```
 
-<img class="code-marker" src="/assets/s.png" />And include it at the top of your `src/App.js`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />And include it at the top of your `src/App.js`.
 
 ``` coffee
 import { LinkContainer } from "react-router-bootstrap";
 ```
 
-<img class="code-marker" src="/assets/s.png" />We will now wrap our links with the `LinkContainer`. Replace the `render` method in your `src/App.js` with this.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />We will now wrap our links with the `LinkContainer`. Replace the `render` method in your `src/App.js` with this.
 
 ``` coffee
 render() {
@@ -98,7 +98,7 @@ render() {
 
 And that's it! Now if you flip over to your browser and click on the login link, you should see the link highlighted in the navbar. Also, it doesn't refresh the page while redirecting.
 
-![Navbar link highlighted screenshot](/assets/react/navbar-link-highlighted.png)
+![Navbar link highlighted screenshot]({{ site.baseurl }}/assets/react/navbar-link-highlighted.png)
 
 You'll notice that we are not rendering anything on the page because we don't have a login page currently. We should handle the case when a requested page is not found.
 

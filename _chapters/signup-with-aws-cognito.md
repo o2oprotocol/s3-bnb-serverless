@@ -10,7 +10,7 @@ comments_id: 46
 
 Now let's go ahead and implement the `handleSubmit` and `handleConfirmationSubmit` methods and connect it up with our AWS Cognito setup.
 
-<img class="code-marker" src="/assets/s.png" />Replace our `handleSubmit` and `handleConfirmationSubmit` methods in `src/containers/Signup.js` with the following.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Replace our `handleSubmit` and `handleConfirmationSubmit` methods in `src/containers/Signup.js` with the following.
 
 ``` javascript
 handleSubmit = async event => {
@@ -51,7 +51,7 @@ handleConfirmationSubmit = async event => {
 }
 ```
 
-<img class="code-marker" src="/assets/s.png" />Also, include the Amplify Auth in our header.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Also, include the Amplify Auth in our header.
 
 ``` javascript
 import { Auth } from "aws-amplify";
@@ -75,7 +75,7 @@ The flow here is pretty simple:
 
 Now if you were to switch over to your browser and try signing up for a new account it should redirect you to the homepage after sign up successfully completes.
 
-![Redirect home after signup screenshot](/assets/react/redirect-home-after-signup.png)
+![Redirect home after signup screenshot]({{ site.baseurl }}/assets/react/redirect-home-after-signup.png)
 
 A quick note on the signup flow here. If the user refreshes their page at the confirm step, they won't be able to get back and confirm that account. It forces them to create a new account instead. We are keeping things intentionally simple but here are a couple of hints on how to fix it.
 

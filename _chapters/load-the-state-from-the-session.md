@@ -15,7 +15,7 @@ Amplify gives us a way to get the current user session using the `Auth.currentSe
 
 Let's load this when our app loads. We are going to do this in `componentDidMount`. Since `Auth.currentSession()` returns a promise, it means that we need to ensure that the rest of our app is only ready to go after this has been loaded.
 
-<img class="code-marker" src="/assets/s.png" />To do this, let's add a flag to our `src/App.js` state called `isAuthenticating`. The initial state in our `constructor` should look like the following.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />To do this, let's add a flag to our `src/App.js` state called `isAuthenticating`. The initial state in our `constructor` should look like the following.
 
 ``` javascript
 this.state = {
@@ -24,13 +24,13 @@ this.state = {
 };
 ```
 
-<img class="code-marker" src="/assets/s.png" />Let's include the `Auth` module by adding the following to the header of `src/App.js`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Let's include the `Auth` module by adding the following to the header of `src/App.js`.
 
 ``` javascript
 import { Auth } from "aws-amplify";
 ```
 
-<img class="code-marker" src="/assets/s.png" />Now to load the user session we'll add the following to our `src/App.js` below our `constructor` method.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Now to load the user session we'll add the following to our `src/App.js` below our `constructor` method.
 
 ``` javascript
 async componentDidMount() {
@@ -57,7 +57,7 @@ Since loading the user session is an asynchronous process, we want to ensure tha
 
 We'll conditionally render our app based on the `isAuthenticating` flag.
 
-<img class="code-marker" src="/assets/s.png" />Our `render` method in `src/App.js` should be as follows.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Our `render` method in `src/App.js` should be as follows.
 
 ``` coffee
 render() {
@@ -100,6 +100,6 @@ render() {
 
 Now if you head over to your browser and refresh the page, you should see that a user is logged in.
 
-![Login from session loaded screenshot](/assets/react/login-from-session-loaded.png)
+![Login from session loaded screenshot]({{ site.baseurl }}/assets/react/login-from-session-loaded.png)
 
 Unfortunately, when we hit Logout and refresh the page; we are still logged in. To fix this we are going to clear the session on logout next.

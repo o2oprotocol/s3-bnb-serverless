@@ -14,7 +14,7 @@ Connecting to an API Gateway endpoint secured using AWS IAM can be challenging. 
 - [Generated API Gateway SDK](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-generate-sdk.html)
 - [AWS Amplify](https://github.com/aws/aws-amplify)
 
-The generated SDK can be hard to use since you need to re-generate it every time a change is made. And we cover how to configure your app using AWS Amplify in the [Configure AWS Amplify]({% link _chapters/configure-aws-amplify.md %}) chapter.
+The generated SDK can be hard to use since you need to re-generate it every time a change is made. And we cover how to configure your app using AWS Amplify in the [Configure AWS Amplify]({{ site.baseurl }}{% link _chapters/configure-aws-amplify.md %}) chapter.
 
 However if you are looking to simply connect to API Gateway using the AWS JS SDK, we've create a standalone [**`sigV4Client.js`**](https://github.com/AnomalyInnovations/sigV4Client) that you can use. It is based on the client that comes pre-packaged with the generated SDK.
 

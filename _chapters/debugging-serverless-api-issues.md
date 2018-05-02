@@ -16,7 +16,7 @@ When a request is made to your serverless API, it starts by hitting API Gateway 
 - [Lambda Function Error](#lambda-function-error)
 - [Lambda Function Timeout](#lambda-function-timeout)
 
-This chapter assumes you have turned on CloudWatch logging for API Gateway and that you know how to read both the API Gateway and Lambda logs. If you have not done so, start by taking a look at the chapter on [API Gateway and Lambda Logs]({% link _chapters/api-gateway-and-lambda-logs.md %}).
+This chapter assumes you have turned on CloudWatch logging for API Gateway and that you know how to read both the API Gateway and Lambda logs. If you have not done so, start by taking a look at the chapter on [API Gateway and Lambda Logs]({{ site.baseurl }}{% link _chapters/api-gateway-and-lambda-logs.md %}).
 
 
 ### Invalid API Endpoint
@@ -48,75 +48,75 @@ assigned to the Cognito Identity Pool has not been granted the **execute-api:Inv
 
 This is a tricky issue to debug because the request still has not reached API Gateway, and hence the error is not logged in the API Gateway CloudWatch logs. But we can perform a check to ensure that our Cognito Identity Pool users have the required permissions, using the [IAM policy Simulator](https://policysim.aws.amazon.com).
 
-Before we can use the simulator we first need to find out the name of the IAM role that we are using to connect to API Gateway. We had created this role back in the [Create a Cognito identity pool]({% link _chapters/create-a-cognito-identity-pool.md %}) chapter.
+Before we can use the simulator we first need to find out the name of the IAM role that we are using to connect to API Gateway. We had created this role back in the [Create a Cognito identity pool]({{ site.baseurl }}{% link _chapters/create-a-cognito-identity-pool.md %}) chapter.
 
 Select **Cognito** from your [AWS Console](https://console.aws.amazon.com).
 
-![Select Cogntio Service Screenshot](/assets/debugging/select-cognito-screenshot.png)
+![Select Cogntio Service Screenshot]({{ site.baseurl }}/assets/debugging/select-cognito-screenshot.png)
 
 Next hit the **Manage Federated Identities** button.
 
-![Click Manage Federated Identities Screenshot](/assets/debugging/click-manage-federated-identities-screenshot.png)
+![Click Manage Federated Identities Screenshot]({{ site.baseurl }}/assets/debugging/click-manage-federated-identities-screenshot.png)
 
 And select your Identity Pool. In our case it's called `notes identity pool`.
 
-![Select identity pool Screenshot](/assets/debugging/select-identity-pool-screenshot.png)
+![Select identity pool Screenshot]({{ site.baseurl }}/assets/debugging/select-identity-pool-screenshot.png)
 
 Click **Edit identity pool** at the top right.
 
-![Click Edit identity pool Screenshot](/assets/debugging/click-edit-identity-pool-screenshot.png)
+![Click Edit identity pool Screenshot]({{ site.baseurl }}/assets/debugging/click-edit-identity-pool-screenshot.png)
 
 Here make a note of the name of the **Authenticated role**. In our case it is `Cognito_notesidentitypoolAuth_Role`.
 
-![Identity Pool Auth Role Screenshot](/assets/debugging/identity-pool-auth-role-screenshot.png)
+![Identity Pool Auth Role Screenshot]({{ site.baseurl }}/assets/debugging/identity-pool-auth-role-screenshot.png)
 
 Now that we know the IAM role we are testing, let's open up the [IAM Policy Simulator](https://policysim.aws.amazon.com).
 
-![Open IAM Policy Simulator](/assets/debugging/open-iam-policy-simulator.png)
+![Open IAM Policy Simulator]({{ site.baseurl }}/assets/debugging/open-iam-policy-simulator.png)
 
 Select **Roles**.
 
-![Select IAM Service Simulator Roles](/assets/debugging/select-iam-policy-simulator-roles.png)
+![Select IAM Service Simulator Roles]({{ site.baseurl }}/assets/debugging/select-iam-policy-simulator-roles.png)
 
 Select the IAM role that we made a note of in the steps above. In our case it is `Cognito_notesidentitypoolAuth_Role`.
 
-![Select IAM Service Simulator Role](/assets/debugging/select-iam-policy-simulator-role.png)
+![Select IAM Service Simulator Role]({{ site.baseurl }}/assets/debugging/select-iam-policy-simulator-role.png)
 
 Select **API Gateway** as the service and select the **Invoke** action.
 
-![Select IAM Service Simulator Action](/assets/debugging/select-iam-policy-simulator-action.png)
+![Select IAM Service Simulator Action]({{ site.baseurl }}/assets/debugging/select-iam-policy-simulator-action.png)
 
-Expand the service and enter the API Gateway endpoint ARN, then select **Run Simulation**. The format here is the same one we used back in the [Create a Cognito identity pool]({% link _chapters/create-a-cognito-identity-pool.md %}) chapter; `arn:aws:execute-api:YOUR_API_GATEWAY_REGION:*:YOUR_API_GATEWAY_ID/*`. In our case this looks like `arn:aws:execute-api:us-east-1:*:ly55wbovq4/*`.
+Expand the service and enter the API Gateway endpoint ARN, then select **Run Simulation**. The format here is the same one we used back in the [Create a Cognito identity pool]({{ site.baseurl }}{% link _chapters/create-a-cognito-identity-pool.md %}) chapter; `arn:aws:execute-api:YOUR_API_GATEWAY_REGION:*:YOUR_API_GATEWAY_ID/*`. In our case this looks like `arn:aws:execute-api:us-east-1:*:ly55wbovq4/*`.
 
-![Enter API Gateway Endpoint ARN](/assets/debugging/enter-api-gateway-endpoint-arn.png)
+![Enter API Gateway Endpoint ARN]({{ site.baseurl }}/assets/debugging/enter-api-gateway-endpoint-arn.png)
 
 If your IAM role is configured properly you should see **allowed** under **Permission**.
 
-![IAM Service Simulator Permission Allowed](/assets/debugging/iam-policy-simulator-permission-allowed.png)
+![IAM Service Simulator Permission Allowed]({{ site.baseurl }}/assets/debugging/iam-policy-simulator-permission-allowed.png)
 
 But if something is off, you'll see **denied**.
 
-![IAM Service Simulator Permission Denied](/assets/debugging/iam-policy-simulator-permission-denied.png)
+![IAM Service Simulator Permission Denied]({{ site.baseurl }}/assets/debugging/iam-policy-simulator-permission-denied.png)
 
 To fix this and edit the role we need to go back to the [AWS Console](https://console.aws.amazon.com) and select IAM from the list of services.
 
-![Select IAM Service Screenshot](/assets/debugging/select-iam-service.png)
+![Select IAM Service Screenshot]({{ site.baseurl }}/assets/debugging/select-iam-service.png)
 
 Select **Roles** on the left menu.
 
-![Select IAM Roles Screenshot](/assets/debugging/select-iam-roles.png)
+![Select IAM Roles Screenshot]({{ site.baseurl }}/assets/debugging/select-iam-roles.png)
 
 And select the IAM role that our Identity Pool is using. In our case it's called `Cognito_notesidentitypoolAuth_Role`.
 
-![Select notes identity pool auth role Screenshot](/assets/debugging/select-notes-identity-pool-auth-role.png)
+![Select notes identity pool auth role Screenshot]({{ site.baseurl }}/assets/debugging/select-notes-identity-pool-auth-role.png)
 
 Expand the policy under the list of policies.
 
-![Expand auth role policy Screenshot](/assets/debugging/expand-auth-role-policy.png)
+![Expand auth role policy Screenshot]({{ site.baseurl }}/assets/debugging/expand-auth-role-policy.png)
 
 Click **Edit policy**.
 
-![Edit auth role policy Screenshot](/assets/debugging/edit-auth-role-policy.png)
+![Edit auth role policy Screenshot]({{ site.baseurl }}/assets/debugging/edit-auth-role-policy.png)
 
 Here you can edit the policy to ensure that it has the right permission to invoke API Gateway. Ensure that there is a block in your policy like the one below.
 
@@ -136,7 +136,7 @@ Here you can edit the policy to ensure that it has the right permission to invok
 
 Finally, hit **Save** to update the policy.
 
-![Save auth role policy Screenshot](/assets/debugging/save-auth-role-policy.png)
+![Save auth role policy Screenshot]({{ site.baseurl }}/assets/debugging/save-auth-role-policy.png)
 
 Now if you test your policy, it should show that you are allowed to invoke your API Gateway endpoint.
 

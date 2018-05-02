@@ -13,31 +13,31 @@ Now that our app is being served through our domain, let's add a layer of securi
 
 Select **Certificate Manager** from the list of services in your [AWS Console](https://console.aws.amazon.com). Ensure that you are in the **US East (N. Virginia)** region. This is because a certificate needs to be from this region for it to [work with CloudFront](http://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html). 
 
-![Select Certificate Manager service screenshot](/assets/deploy-frontend/select-certificate-manager-service.png)
+![Select Certificate Manager service screenshot]({{ site.baseurl }}/assets/deploy-frontend/select-certificate-manager-service.png)
 
 If this is your first certificate, you'll need to hit **Get started**. If not then hit **Request a certificate** from the top.
 
-![Get started with Certificate Manager screenshot](/assets/deploy-frontend/get-started-certificate-manager.png)
+![Get started with Certificate Manager screenshot]({{ site.baseurl }}/assets/deploy-frontend/get-started-certificate-manager.png)
 
 And type in the name of our domain. Hit **Add another name to this certificate** and add our www version of our domain as well. Hit **Review and request** once you are done.
 
-![Add domain names to certificate screenshot](/assets/deploy-frontend/add-domain-names-to-certificate.png)
+![Add domain names to certificate screenshot]({{ site.baseurl }}/assets/deploy-frontend/add-domain-names-to-certificate.png)
 
 Now to confirm that we control the domain, select the **DNS validation** method and hit **Review**.
 
-![Select dns validation for certificate screenshot](/assets/deploy-frontend/select-dns-validation-for-certificate.png)
+![Select dns validation for certificate screenshot]({{ site.baseurl }}/assets/deploy-frontend/select-dns-validation-for-certificate.png)
 
 On the validation screen expand the two domains we are trying to validate.
 
-![Expand dns validation details screenshot](/assets/deploy-frontend/expand-dns-validation-details.png)
+![Expand dns validation details screenshot]({{ site.baseurl }}/assets/deploy-frontend/expand-dns-validation-details.png)
 
 Since we control the domain through Route 53, we can directly create the DNS record through here by hitting **Create record in Route 53**.
 
-![Create Route 53 dns record screenshot](/assets/deploy-frontend/create-route-53-dns-record.png)
+![Create Route 53 dns record screenshot]({{ site.baseurl }}/assets/deploy-frontend/create-route-53-dns-record.png)
 
 And confirm that you want the record to be created by hitting **Create**.
 
-![Confirm Route 53 dns record screenshot](/assets/deploy-frontend/confirm-route-53-dns-record.png)
+![Confirm Route 53 dns record screenshot]({{ site.baseurl }}/assets/deploy-frontend/confirm-route-53-dns-record.png)
 
 Also, make sure to do this for the other domain.
 
@@ -49,31 +49,31 @@ Next, we'll associate this certificate with our CloudFront Distributions.
 
 Open up our first CloudFront Distribution from our list of distributions and hit the **Edit** button.
 
-![Select CloudFront Distribution screenshot](/assets/deploy-frontend/select-cloudfront-distribution.png)
+![Select CloudFront Distribution screenshot]({{ site.baseurl }}/assets/deploy-frontend/select-cloudfront-distribution.png)
 
 Now switch the **SSL Certificate** to **Custom SSL Certificate** and select the certificate we just created from the drop down. And scroll down to the bottom and hit **Yes, Edit**.
 
-![Select custom SSL Certificate screenshot](/assets/deploy-frontend/select-custom-ssl-certificate.png)
+![Select custom SSL Certificate screenshot]({{ site.baseurl }}/assets/deploy-frontend/select-custom-ssl-certificate.png)
 
 Next, head over to the **Behaviors** tab from the top.
 
-![Select Behaviors tab screenshot](/assets/deploy-frontend/select-behaviors-tab.png)
+![Select Behaviors tab screenshot]({{ site.baseurl }}/assets/deploy-frontend/select-behaviors-tab.png)
 
 And select the only one we have and hit **Edit**.
 
-![Edit Distribution Behavior screenshot](/assets/deploy-frontend/edit-distribution-behavior.png)
+![Edit Distribution Behavior screenshot]({{ site.baseurl }}/assets/deploy-frontend/edit-distribution-behavior.png)
 
 Then switch the **Viewer Protocol Policy** to **Redirect HTTP to HTTPS**. And scroll down to the bottom and hit **Yes, Edit**.
 
-![Switch Viewer Protocol Policy screenshot](/assets/deploy-frontend/switch-viewer-protocol-policy.png)
+![Switch Viewer Protocol Policy screenshot]({{ site.baseurl }}/assets/deploy-frontend/switch-viewer-protocol-policy.png)
 
 Now let's do the same for our other CloudFront Distribution.
 
-![Select custom SSL Certificate screenshot](/assets/deploy-frontend/select-custom-ssl-certificate-2.png)
+![Select custom SSL Certificate screenshot]({{ site.baseurl }}/assets/deploy-frontend/select-custom-ssl-certificate-2.png)
 
 But leave the **Viewer Protocol Policy** as **HTTP and HTTPS**. This is because we want our users to go straight to the HTTPS version of our non-www domain. As opposed to redirecting to the HTTPS version of our www domain before redirecting again.
 
-![Dont switch Viewer Protocol Policy for www distribution screenshot](/assets/deploy-frontend/dont-switch-viewer-protocol-policy-for-www-distribution.png)
+![Dont switch Viewer Protocol Policy for www distribution screenshot]({{ site.baseurl }}/assets/deploy-frontend/dont-switch-viewer-protocol-policy-for-www-distribution.png)
 
 ### Update S3 Redirect Bucket
 
@@ -81,14 +81,14 @@ The S3 Redirect Bucket that we created in the last chapter is redirecting to the
 
 Open up the S3 Redirect Bucket we created in the last chapter. Head over to the **Properties** tab and select **Static website hosting**.
 
-![Open S3 Redirect Bucket Properties screenshot](/assets/s3-bucket/open-s3-redirect-bucket-properties.png)
+![Open S3 Redirect Bucket Properties screenshot]({{ site.baseurl }}/assets/s3-bucket/open-s3-redirect-bucket-properties.png)
 
 Change the **Protocol** to **https** and hit **Save**.
 
-![Change S3 Redirect to HTTPS screenshot](/assets/s3-bucket/change-s3-redirect-to-https.png)
+![Change S3 Redirect to HTTPS screenshot]({{ site.baseurl }}/assets/s3-bucket/change-s3-redirect-to-https.png)
 
 And that's it. Our app should be served out on our domain through HTTPS.
 
-![App live with certificate screenshot](/assets/deploy-frontend/app-live-with-certificate.png)
+![App live with certificate screenshot]({{ site.baseurl }}/assets/deploy-frontend/app-live-with-certificate.png)
 
 Next up, let's look at the process of deploying updates to our app.

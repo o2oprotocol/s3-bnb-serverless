@@ -19,4 +19,4 @@ AWS provides quite a few services that can help us do the above. We are going to
 
 So let's get started by first configuring our S3 bucket to upload the assets of our app.
 
-![Deploy the Frontend screenshot](/assets/react/deploying-angular-react-in-aws.png)
+![Deploy the Frontend screenshot]({{ site.baseurl }}/assets/react/deploying-angular-react-in-aws.png)

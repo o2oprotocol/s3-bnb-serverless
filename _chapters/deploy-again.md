@@ -22,7 +22,7 @@ Now that our app is built and ready in the `build/` directory, let's deploy to S
 
 ### Upload to S3
 
-Run the following from our working directory to upload our app to our main S3 Bucket. Make sure to replace `YOUR_S3_DEPLOY_BUCKET_NAME` with the S3 Bucket we created in the [Create an S3 bucket]({% link _chapters/create-an-s3-bucket.md %}) chapter.
+Run the following from our working directory to upload our app to our main S3 Bucket. Make sure to replace `YOUR_S3_DEPLOY_BUCKET_NAME` with the S3 Bucket we created in the [Create an S3 bucket]({{ site.baseurl }}{% link _chapters/create-an-s3-bucket.md %}) chapter.
 
 ``` bash
 $ aws s3 sync build/ s3://YOUR_S3_DEPLOY_BUCKET_NAME --delete
@@ -32,7 +32,7 @@ Note the `--delete` flag here; this is telling S3 to delete all the files that a
 
 Our changes should be live on S3.
 
-![App updated live on S3 screenshot](/assets/react/app-updated-live-on-s3.png)
+![App updated live on S3 screenshot]({{ site.baseurl }}/assets/react/app-updated-live-on-s3.png)
 
 Now to ensure that CloudFront is serving out the updated version of our app, let's invalidate the CloudFront cache.
 
@@ -42,7 +42,7 @@ CloudFront allows you to invalidate objects in the distribution by passing in th
 
 To do this we'll need the **Distribution ID** of **both** of our CloudFront Distributions. You can get it by clicking on the distribution from the list of CloudFront Distributions.
 
-![CloudFront Distributions ID screenshot](/assets/deploy-frontend/cloudfront-distribution-id.png)
+![CloudFront Distributions ID screenshot]({{ site.baseurl }}/assets/deploy-frontend/cloudfront-distribution-id.png)
 
 Now we can use the AWS CLI to invalidate the cache of the two distributions. As of writing this, the CloudFront portion of the CLI is in preview and needs to be enabled by running the following. This only needs to be run once and not every time we deploy.
 
@@ -59,11 +59,11 @@ $ aws cloudfront create-invalidation --distribution-id YOUR_WWW_CF_DISTRIBUTION_
 
 This invalidates our distribution for both the www and non-www versions of our domain. If you click on the **Invalidations** tab, you should see your invalidation request being processed.
 
-![CloudFront Invalidation in progress screenshot](/assets/deploy-frontend/cloudfront-invalidation-in-progress.png)
+![CloudFront Invalidation in progress screenshot]({{ site.baseurl }}/assets/deploy-frontend/cloudfront-invalidation-in-progress.png)
 
 It can take a few minutes to complete. But once it is done, the updated version of our app should be live.
 
-![App update live screenshot](/assets/react/app-update-live.png)
+![App update live screenshot]({{ site.baseurl }}/assets/react/app-update-live.png)
 
 And that’s it! We now have a set of commands we can run to deploy our updates. Let's quickly put them together so we can do it with one command.
 
@@ -71,7 +71,7 @@ And that’s it! We now have a set of commands we can run to deploy our updates.
 
 NPM allows us to add a `deploy` command in our `package.json`.
 
-<img class="code-marker" src="/assets/s.png" />Add the following in the `scripts` block above `eject` in the `package.json`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Add the following in the `scripts` block above `eject` in the `package.json`.
 
 ``` coffee
 "predeploy": "npm run build",

@@ -11,7 +11,7 @@ Let's start by creating the signup form that'll get the user's email and passwor
 
 ### Add the Container
 
-<img class="code-marker" src="/assets/s.png" />Create a new container at `src/containers/Signup.js` with the following.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Create a new container at `src/containers/Signup.js` with the following.
 
 ``` coffee
 import React, { Component } from "react";
@@ -163,7 +163,7 @@ Most of the things we are doing here are fairly straightforward but let's go ove
 
 5. For now our `handleSubmit` and `handleConfirmationSubmit` don't do a whole lot besides setting the `isLoading` state and a dummy value for the `newUser` state.
 
-<img class="code-marker" src="/assets/s.png" />Also, let's add a couple of styles in `src/containers/Signup.css`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Also, let's add a couple of styles in `src/containers/Signup.css`.
 
 ``` css
 @media all and (min-width: 480px) {
@@ -186,7 +186,7 @@ Most of the things we are doing here are fairly straightforward but let's go ove
 
 ### Add the Route
 
-<img class="code-marker" src="/assets/s.png" />Finally, add our container as a route in `src/Routes.js` below our login route. We are using the `AppliedRoute` component that we created in the [Add the session to the state]({% link _chapters/add-the-session-to-the-state.md %}) chapter.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Finally, add our container as a route in `src/Routes.js` below our login route. We are using the `AppliedRoute` component that we created in the [Add the session to the state]({{ site.baseurl }}{% link _chapters/add-the-session-to-the-state.md %}) chapter.
 
 ``` coffee
 <AppliedRoute path="/signup" exact component={Signup} props={childProps} />
@@ -200,6 +200,6 @@ import Signup from "./containers/Signup";
 
 Now if we switch to our browser and navigate to the signup page we should see our newly created form. Our form doesn't do anything when we enter in our info but you can still try to fill in an email address, password, and the confirmation code. It'll give you an idea of how the form will behave once we connect it to Cognito.
 
-![Signup page added screenshot](/assets/react/signup-page-added.png)
+![Signup page added screenshot]({{ site.baseurl }}/assets/react/signup-page-added.png)
 
 Next, let's connect our signup form to Amazon Cognito.

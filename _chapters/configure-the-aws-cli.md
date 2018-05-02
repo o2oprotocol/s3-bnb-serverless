@@ -21,7 +21,7 @@ python --version     			         &&
 pip --version
 ```
 
-<img class="code-marker" src="/assets/s.png" />Now using Pip you can install the AWS CLI (on Linux, macOS, or Unix) by running:
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Now using Pip you can install the AWS CLI (on Linux, macOS, or Unix) by running:
 
 ``` bash
 // $ sudo pip install awscli
@@ -42,7 +42,7 @@ It should look something like this:
 - Access key ID **AKIAIOSFODNN7EXAMPLE**
 - Secret access key **wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY**
 
-<img class="code-marker" src="/assets/s.png" />Simply run the following with your Secret Key ID and your Access Key.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Simply run the following with your Secret Key ID and your Access Key.
 
 ``` bash
 $ aws configure

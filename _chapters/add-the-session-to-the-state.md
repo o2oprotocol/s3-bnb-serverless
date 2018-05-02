@@ -14,7 +14,7 @@ To complete the login process we would need to update the app state with the ses
 
 First we'll start by updating the application state by setting that the user is logged in. We might be tempted to store this in the `Login` container, but since we are going to use this in a lot of other places, it makes sense to lift up the state. The most logical place to do this will be in our `App` component.
 
-<img class="code-marker" src="/assets/s.png" />Add the following to `src/App.js` right below the `class App extends Component {` line.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Add the following to `src/App.js` right below the `class App extends Component {` line.
 
 ``` javascript
 constructor(props) {
@@ -36,7 +36,7 @@ This initializes the `isAuthenticated` flag in the App's state. And calling `use
 
 We can do this by passing in a couple of props to the child component of the routes that the `App` component creates.
 
-<img class="code-marker" src="/assets/s.png" />Add the following right below the `render() {` line in `src/App.js`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Add the following right below the `render() {` line in `src/App.js`.
 
 ``` javascript
 const childProps = {
@@ -45,13 +45,13 @@ const childProps = {
 };
 ```
 
-<img class="code-marker" src="/assets/s.png" />And pass them into our `Routes` component by replacing the following line in the `render` method of `src/App.js`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />And pass them into our `Routes` component by replacing the following line in the `render` method of `src/App.js`.
 
 ``` coffee
 <Routes />
 ```
 
-<img class="code-marker" src="/assets/s.png" />With this.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />With this.
 
 ``` coffee
 <Routes childProps={childProps} />
@@ -61,7 +61,7 @@ Currently, our `Routes` component does not do anything with the passed in `child
 
 To do this we are going to create a new component.
 
-<img class="code-marker" src="/assets/s.png" />Create a `src/components/` directory by running this command in your working directory.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Create a `src/components/` directory by running this command in your working directory.
 
 ``` bash
 $ mkdir src/components/
@@ -69,7 +69,7 @@ $ mkdir src/components/
 
 Here we'll be storing all our React components that are not dealing directly with our API or responding to routes.
 
-<img class="code-marker" src="/assets/s.png" />Create a new component in `src/components/AppliedRoute.js` and add the following.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Create a new component in `src/components/AppliedRoute.js` and add the following.
 
 ``` coffee
 import React from "react";
@@ -91,7 +91,7 @@ This simple component creates a `Route` where the child component that it render
 
 Now to use this component, we are going to include it in the routes where we need to have the `childProps` passed in.
 
-<img class="code-marker" src="/assets/s.png" />Replace the `export default () => (` method in `src/Routes.js` with the following.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Replace the `export default () => (` method in `src/Routes.js` with the following.
 
 ``` coffee
 export default ({ childProps }) =>
@@ -103,7 +103,7 @@ export default ({ childProps }) =>
   </Switch>;
 ```
 
-<img class="code-marker" src="/assets/s.png" />And import the new component in the header of `src/Routes.js`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />And import the new component in the header of `src/Routes.js`.
 
 ``` coffee
 import AppliedRoute from "./components/AppliedRoute";
@@ -111,7 +111,7 @@ import AppliedRoute from "./components/AppliedRoute";
 
 Now in the `Login` container we'll call the `userHasAuthenticated` method.
 
-<img class="code-marker" src="/assets/s.png" />Replace the `alert('Logged in');` line with the following in `src/containers/Login.js`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Replace the `alert('Logged in');` line with the following in `src/containers/Login.js`.
 
 ``` javascript
 this.props.userHasAuthenticated(true);
@@ -130,7 +130,7 @@ We can now use this to display a Logout button once the user logs in. Find the f
 </LinkContainer>
 ```
 
-<img class="code-marker" src="/assets/s.png" />And replace it with this:
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />And replace it with this:
 
 ``` coffee
 {this.state.isAuthenticated
@@ -148,7 +148,7 @@ We can now use this to display a Logout button once the user logs in. Find the f
 
 Also, import the `Fragment` in the header.
 
-<img class="code-marker" src="/assets/s.png" />Replace the `import React` line in the header of `src/App.js` with the following.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Replace the `import React` line in the header of `src/App.js` with the following.
 
 ``` coffee
 import React, { Component, Fragment } from "react";
@@ -156,7 +156,7 @@ import React, { Component, Fragment } from "react";
 
 The `Fragment` component can be thought of as a placeholder component. We need this because in the case the user is not logged in, we want to render two links. To do this we would need to wrap it inside a single component, like a `div`. But by using the `Fragment` component it tells React that the two links are inside this component but we don't want to render any extra HTML.
 
-<img class="code-marker" src="/assets/s.png" />And add this `handleLogout` method to `src/App.js` above the `render() {` line as well.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />And add this `handleLogout` method to `src/App.js` above the `render() {` line as well.
 
 ``` coffee
 handleLogout = event => {
@@ -164,8 +164,8 @@ handleLogout = event => {
 }
 ```
 
-Now head over to your browser and try logging in with the admin credentials we created in the [Create a Cognito Test User]({% link _chapters/create-a-cognito-test-user.md %}) chapter. You should see the Logout button appear right away.
+Now head over to your browser and try logging in with the admin credentials we created in the [Create a Cognito Test User]({{ site.baseurl }}{% link _chapters/create-a-cognito-test-user.md %}) chapter. You should see the Logout button appear right away.
 
-![Login state updated screenshot](/assets/react/login-state-updated.png)
+![Login state updated screenshot]({{ site.baseurl }}/assets/react/login-state-updated.png)
 
 Now if you refresh your page you should be logged out again. This is because we are not initializing the state from the browser session. Let's look at how to do that next.

@@ -15,11 +15,11 @@ layout: default
     {% if page.context == 'backend' or page.context == 'frontend' or page.context == 'all' %}
     <div class="post-context">
       {% if page.context == 'backend' %}
-        This article is a part of the <a href="{% link _chapters/setup-the-serverless-framework.md %}">Serverless section</a> of a <a href="/">guide to building full-stack apps</a> with Serverless and React.
+        This article is a part of the <a href="{{ site.baseurl }}{% link _chapters/setup-the-serverless-framework.md %}">Serverless section</a> of a <a href="{{ site.baseurl }}/">guide to building full-stack apps</a> with Serverless and React.
       {% elsif page.context == 'frontend' %}
-        This article is a part of the <a href="{% link _chapters/create-a-new-reactjs-app.md %}">React.js section</a> of a <a href="/">guide to building full-stack apps</a> with Serverless and React.
+        This article is a part of the <a href="{{ site.baseurl }}{% link _chapters/create-a-new-reactjs-app.md %}">React.js section</a> of a <a href="{{ site.baseurl }}/">guide to building full-stack apps</a> with Serverless and React.
       {% else %}
-        This article is a part of a <a href="/">guide to building full-stack apps</a> with Serverless and React.
+        This article is a part of a <a href="{{ site.baseurl }}/">guide to building full-stack apps</a> with Serverless and React.
       {% endif %}
     </div>
     {% endif %}
@@ -32,7 +32,7 @@ layout: default
 
   <div class="post-sponsor">
     <hr />
-    <a target="_blank" href="https://o2oprotocol.io"><img width="435" alt="A fully-configured CI/CD pipeline for Serverless" src="/assets/O2O.png" /></a>
+    <a target="_blank" href="https://o2oprotocol.io"><img width="435" alt="A fully-configured CI/CD pipeline for Serverless" src="{{ site.baseurl }}/assets/O2O.png" /></a>
   </div>
 
   <div class="post-closing">
@@ -51,11 +51,11 @@ layout: default
 
   <div class="post-footer">
     {% if page.previous.url %}
-    <a class="previous" href="{{ page.previous.url }}">&larr; Previous</a>
+    <a class="previous" href="{{ site.baseurl }}{{ page.previous.url }}">&larr; Previous</a>
     {% endif %}
-    <a class="toc" href="/#table-of-contents">Table of Contents</a>
+    <a class="toc" href="{{ site.baseurl }}/#table-of-contents">Table of Contents</a>
     {% if page.next.url %}
-    <a class="next" href="{{ page.next.url }}">Next &rarr;</a>
+    <a class="next" href="{{ site.baseurl }}{{ page.next.url }}">Next &rarr;</a>
     {% endif %}
   </div>
 

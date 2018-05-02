@@ -9,7 +9,7 @@ comments_id: 55
 
 Now that our note loads into our form, let's work on saving the changes we make to that note.
 
-<img class="code-marker" src="/assets/s.png" />Replace the `handleSubmit` method in `src/containers/Notes.js` with the following.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Replace the `handleSubmit` method in `src/containers/Notes.js` with the following.
 
 ``` coffee
 saveNote(note) {
@@ -48,7 +48,7 @@ handleSubmit = async event => {
 
 ```
 
-<img class="code-marker" src="/assets/s.png" />And include our `s3Upload` helper method in the header:
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />And include our `s3Upload` helper method in the header:
 
 ``` javascript
 import { s3Upload } from "../libs/awsLib";
@@ -64,7 +64,7 @@ The code above is doing a couple of things that should be very similar to what w
 
 Let's switch over to our browser and give it a try by saving some changes.
 
-![Notes page saving screenshot](/assets/react/listing-page-saving.png)
+![Notes page saving screenshot]({{ site.baseurl }}/assets/react/listing-page-saving.png)
 
 You might have noticed that we are not deleting the old attachment when we upload a new one. To keep things simple, we are leaving that bit of detail up to you. It should be pretty straightforward. Check the [AWS Amplify API Docs](https://aws.github.io/aws-amplify/api/classes/storageclass.html#remove) on how to a delete file from S3.
 

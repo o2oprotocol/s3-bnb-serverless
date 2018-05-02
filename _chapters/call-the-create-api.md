@@ -11,13 +11,13 @@ Now that we have our basic create note form working, let's connect it to our API
 
 We just need to use the `API` module that AWS Amplify has.
 
-<img class="code-marker" src="/assets/s.png" />Let's include the `API` module by adding the following to the header of `src/containers/NewNote.js`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Let's include the `API` module by adding the following to the header of `src/containers/NewNote.js`.
 
 ``` javascript
 import { API } from "aws-amplify";
 ```
 
-<img class="code-marker" src="/assets/s.png" />And replace our `handleSubmit` function with the following.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />And replace our `handleSubmit` function with the following.
 
 ``` javascript
 handleSubmit = async event => {
@@ -50,7 +50,7 @@ createNote(note) {
 
 This does a couple of simple things.
 
-1. We make our create call in `createNote` by making a POST request to `/notes` and passing in our note object. Notice that the first two arguments to the `API.post()` method are `notes` and `/notes`. This is because back in the [Configure AWS Amplify]({% link _chapters/configure-aws-amplify.md %}) chapter we called these set of APIs by the name `notes`.
+1. We make our create call in `createNote` by making a POST request to `/notes` and passing in our note object. Notice that the first two arguments to the `API.post()` method are `notes` and `/notes`. This is because back in the [Configure AWS Amplify]({{ site.baseurl }}{% link _chapters/configure-aws-amplify.md %}) chapter we called these set of APIs by the name `notes`.
 
 2. For now the note object is simply the content of the note. We are creating these notes without an attachment for now.
 
@@ -58,6 +58,6 @@ This does a couple of simple things.
 
 And that's it; if you switch over to your browser and try submitting your form, it should successfully navigate over to our homepage.
 
-![New note created screenshot](/assets/react/new-listing-created.png)
+![New note created screenshot]({{ site.baseurl }}/assets/react/new-listing-created.png)
 
 Next let's upload our file to S3 and add an attachment to our note.

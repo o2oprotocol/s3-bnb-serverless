@@ -17,15 +17,15 @@ Amazon DynamoDB is a fully managed NoSQL database that provides fast and predict
 
 First, log in to your [AWS Console](https://console.aws.amazon.com) and select **DynamoDB** from the list of services.
 
-![Select DynamoDB Service screenshot](/assets/dynamodb/select-dynamodb-service.png)
+![Select DynamoDB Service screenshot]({{ site.baseurl }}/assets/dynamodb/select-dynamodb-service.png)
 
 Select **Create table**.
 
-![Create DynamoDB Table screenshot](/assets/dynamodb/create-dynamodb-table.png)
+![Create DynamoDB Table screenshot]({{ site.baseurl }}/assets/dynamodb/create-dynamodb-table.png)
 
 Enter the **Table name** and **Primary key** info as shown below. Just make sure that `userId` and `noteId` are in camel case.
 
-![Set Table Primary Key screenshot](/assets/dynamodb/set-table-primary-key.png)
+![Set Table Primary Key screenshot]({{ site.baseurl }}/assets/dynamodb/set-table-primary-key.png)
 
 Each DynamoDB table has a primary key, which cannot be changed once set. The primary key uniquely identifies each item in the table, so that no two items can have the same key. DynamoDB supports two different kinds of primary keys:
 
@@ -38,11 +38,11 @@ To get a further understanding on how indexes work in DynamoDB, you can read mor
 
 If you see the following message, deselect **Use default settings**.
 
-![Auto Scaling IAM Role Warning screenshot](/assets/dynamodb/auto-scaling-iam-role-warning.png)
+![Auto Scaling IAM Role Warning screenshot]({{ site.baseurl }}/assets/dynamodb/auto-scaling-iam-role-warning.png)
 
 Scroll to the bottom, ensure that **New role: DynamoDBAutoscaleRole** is selected, and select **Create**.
 
-![Set Table Provisioned Capacity screenshot](/assets/dynamodb/set-table-provisioned-capacity.png)
+![Set Table Provisioned Capacity screenshot]({{ site.baseurl }}/assets/dynamodb/set-table-provisioned-capacity.png)
 
 Otherwise, simply ensure that **Use default settings** is checked, then select **Create**.
 
@@ -50,7 +50,7 @@ Note that the default setting provisions 5 reads and 5 writes. When you create a
 
 The `notes` table has now been created. If you find yourself stuck with the **Table is being created** message; refresh the page manually.
 
-![Select DynamoDB Service screenshot](/assets/dynamodb/dynamodb-table-created.png)
+![Select DynamoDB Service screenshot]({{ site.baseurl }}/assets/dynamodb/dynamodb-table-created.png)
 
 Next we'll set up an S3 bucket to handle file uploads.
 

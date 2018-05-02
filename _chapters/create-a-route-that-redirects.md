@@ -10,7 +10,7 @@ comments_id: 58
 
 Let's first create a route that will check if the user is logged in before routing.
 
-<img class="code-marker" src="/assets/s.png" />Add the following to `src/components/AuthenticatedRoute.js`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Add the following to `src/components/AuthenticatedRoute.js`.
 
 ``` coffee
 import React from "react";
@@ -29,11 +29,11 @@ export default ({ component: C, props: cProps, ...rest }) =>
   />;
 ```
 
-This component is similar to the `AppliedRoute` component that we created in the [Add the session to the state]({% link _chapters/add-the-session-to-the-state.md %}) chapter. The main difference being that we look at the props that are passed in to check if a user is authenticated. If the user is authenticated, then we simply render the passed in component. And if the user is not authenticated, then we use the `Redirect` React Rotuer v4 component to redirect the user to the login page. We also pass in the current path to the login page (`redirect` in the querystring). We will use this later to redirect us back after the user logs in.
+This component is similar to the `AppliedRoute` component that we created in the [Add the session to the state]({{ site.baseurl }}{% link _chapters/add-the-session-to-the-state.md %}) chapter. The main difference being that we look at the props that are passed in to check if a user is authenticated. If the user is authenticated, then we simply render the passed in component. And if the user is not authenticated, then we use the `Redirect` React Rotuer v4 component to redirect the user to the login page. We also pass in the current path to the login page (`redirect` in the querystring). We will use this later to redirect us back after the user logs in.
 
 We'll do something similar to ensure that the user is not authenticated.
 
-<img class="code-marker" src="/assets/s.png" />Add the following to `src/components/UnauthenticatedRoute.js`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Add the following to `src/components/UnauthenticatedRoute.js`.
 
 ``` coffee
 import React from "react";

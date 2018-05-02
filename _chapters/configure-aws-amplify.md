@@ -14,7 +14,7 @@ AWS Amplify provides a few simple modules (Auth, API, and Storage) to help us ea
 
 ### Install AWS Amplify
 
-<img class="code-marker" src="/assets/s.png" />Run the following command in your working directory.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Run the following command in your working directory.
 
 ``` bash
 $ npm install aws-amplify --save
@@ -26,7 +26,7 @@ This installs the NPM package and adds the dependency to your `package.json`.
 
 Let's first create a configuration file for our app that'll reference all the resources we have created.
 
-<img class="code-marker" src="/assets/s.png" />Create a file at `src/config.js` and add the following.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Create a file at `src/config.js` and add the following.
 
 ``` coffee
 export default {
@@ -49,19 +49,19 @@ export default {
 
 Here you need to replace the following:
 
-1. `YOUR_S3_UPLOADS_BUCKET_NAME` and `YOUR_S3_UPLOADS_BUCKET_REGION` with the your S3 Bucket name and region from the [Create an S3 bucket for file uploads]({% link _chapters/create-an-s3-bucket-for-file-uploads.md %}) chapter. In our case it is `notes-app-uploads` and `us-east-1`.
+1. `YOUR_S3_UPLOADS_BUCKET_NAME` and `YOUR_S3_UPLOADS_BUCKET_REGION` with the your S3 Bucket name and region from the [Create an S3 bucket for file uploads]({{ site.baseurl }}{% link _chapters/create-an-s3-bucket-for-file-uploads.md %}) chapter. In our case it is `notes-app-uploads` and `us-east-1`.
 
-2. `YOUR_API_GATEWAY_URL` and `YOUR_API_GATEWAY_REGION` with the ones from the [Deploy the APIs]({% link _chapters/deploy-the-apis.md %}) chapter. In our case the URL is `https://ly55wbovq4.execute-api.us-east-1.amazonaws.com/prod` and the region is `us-east-1`.
+2. `YOUR_API_GATEWAY_URL` and `YOUR_API_GATEWAY_REGION` with the ones from the [Deploy the APIs]({{ site.baseurl }}{% link _chapters/deploy-the-apis.md %}) chapter. In our case the URL is `https://ly55wbovq4.execute-api.us-east-1.amazonaws.com/prod` and the region is `us-east-1`.
 
-3. `YOUR_COGNITO_USER_POOL_ID`, `YOUR_COGNITO_APP_CLIENT_ID`, and `YOUR_COGNITO_REGION` with the Cognito **Pool Id**, **App Client id**, and region from the [Create a Cognito user pool]({% link _chapters/create-a-cognito-user-pool.md %}) chapter.
+3. `YOUR_COGNITO_USER_POOL_ID`, `YOUR_COGNITO_APP_CLIENT_ID`, and `YOUR_COGNITO_REGION` with the Cognito **Pool Id**, **App Client id**, and region from the [Create a Cognito user pool]({{ site.baseurl }}{% link _chapters/create-a-cognito-user-pool.md %}) chapter.
 
-4. `YOUR_IDENTITY_POOL_ID` with your **Identity pool ID** from the [Create a Cognito identity pool]({% link _chapters/create-a-cognito-identity-pool.md %}) chapter.
+4. `YOUR_IDENTITY_POOL_ID` with your **Identity pool ID** from the [Create a Cognito identity pool]({{ site.baseurl }}{% link _chapters/create-a-cognito-identity-pool.md %}) chapter.
 
 ### Add AWS Amplify
 
 Next we'll set up AWS Amplify.
 
-<img class="code-marker" src="/assets/s.png" />Import it by adding the following to the header of your `src/index.js`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Import it by adding the following to the header of your `src/index.js`.
 
 ``` coffee
 import Amplify from "aws-amplify";
@@ -69,13 +69,13 @@ import Amplify from "aws-amplify";
 
 And import the config we created above. 
 
-<img class="code-marker" src="/assets/s.png" />Add the following, also to the header of your `src/index.js`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Add the following, also to the header of your `src/index.js`.
 
 ``` coffee
 import config from "./config";
 ```
 
-<img class="code-marker" src="/assets/s.png" />And to initialize AWS Amplify, add the following below your imports in the `src/index.js`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />And to initialize AWS Amplify, add the following below your imports in the `src/index.js`.
 
 ``` coffee
 Amplify.configure({

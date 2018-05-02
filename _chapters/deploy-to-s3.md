@@ -21,7 +21,7 @@ This packages all of our assets and places them in the `build/` directory.
 
 ### Upload to S3
 
-Now to deploy simply run the following command; where `YOUR_S3_DEPLOY_BUCKET_NAME` is the name of the S3 Bucket we created in the [Create an S3 bucket]({% link _chapters/create-an-s3-bucket.md %}) chapter.
+Now to deploy simply run the following command; where `YOUR_S3_DEPLOY_BUCKET_NAME` is the name of the S3 Bucket we created in the [Create an S3 bucket]({{ site.baseurl }}{% link _chapters/create-an-s3-bucket.md %}) chapter.
 
 ``` bash
 $ aws s3 sync build/ s3://YOUR_S3_DEPLOY_BUCKET_NAME
@@ -29,10 +29,10 @@ $ aws s3 sync build/ s3://YOUR_S3_DEPLOY_BUCKET_NAME
 
 All this command does is that it syncs the `build/` directory with our bucket on S3. Just as a sanity check, go into the S3 section in your [AWS Console](https://console.aws.amazon.com/console/home) and check if your bucket has the files we just uploaded.
 
-![Uploaded to S3 screenshot](/assets/s3/uploaded-to-s3.png)
+![Uploaded to S3 screenshot]({{ site.baseurl }}/assets/s3/uploaded-to-s3.png)
 
 And our app should be live on S3! If you head over to the URL assigned to you (in my case it is [http://dapp-boilerplate.s3-website-us-east-1.amazonaws.com](http://dapp-boilerplate.s3-website-us-east-1.amazonaws.com)), you should see it live.
 
-![App live on S3 screenshot](/assets/s3/app-live-on-s3.png)
+![App live on S3 screenshot]({{ site.baseurl }}/assets/s3/app-live-on-s3.png)
 
 Next we'll configure CloudFront to serve our app out globally.

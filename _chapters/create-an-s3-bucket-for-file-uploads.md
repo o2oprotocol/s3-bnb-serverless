@@ -18,11 +18,11 @@ In this chapter, we are going to create an S3 bucket which will be used to store
 
 First, log in to your [AWS Console](https://console.aws.amazon.com) and select **S3** from the list of services.
 
-![Select S3 Service screenshot](/assets/s3/select-s3-service.png)
+![Select S3 Service screenshot]({{ site.baseurl }}/assets/s3/select-s3-service.png)
 
 Select **Create Bucket**.
 
-![Select Create Bucket screenshot](/assets/s3/select-create-bucket.png)
+![Select Create Bucket screenshot]({{ site.baseurl }}/assets/s3/select-create-bucket.png)
 
 Pick a name of the bucket and select a region. Then select **Create**.
 
@@ -31,13 +31,13 @@ Pick a name of the bucket and select a region. Then select **Create**.
 
 Make a note of the name and region as we'll be using it later in the guide.
 
-![Enter S3 Bucket Info screenshot](/assets/s3/enter-s3-bucket-info.png)
+![Enter S3 Bucket Info screenshot]({{ site.baseurl }}/assets/s3/enter-s3-bucket-info.png)
 
 Step through the next steps and leave the defaults by clicking **Next**, and then click **Create Bucket** on the last step.
 
-![Set S3 Bucket Properties screenshot](/assets/s3/set-s3-bucket-properties.png)
-![Set S3 Bucket Permissions screenshot](/assets/s3/set-s3-bucket-permissions.png)
-![Review S3 Bucket screenshot](/assets/s3/review-s3-bucket.png)
+![Set S3 Bucket Properties screenshot]({{ site.baseurl }}/assets/s3/set-s3-bucket-properties.png)
+![Set S3 Bucket Permissions screenshot]({{ site.baseurl }}/assets/s3/set-s3-bucket-permissions.png)
+![Review S3 Bucket screenshot]({{ site.baseurl }}/assets/s3/review-s3-bucket.png)
 
 ### Enable CORS
 
@@ -45,11 +45,11 @@ In the notes app we'll be building, users will be uploading files to the bucket 
 
 Select the bucket we just created.
 
-![Select Created S3 Bucket screenshot](/assets/s3/select-created-s3-bucket.png)
+![Select Created S3 Bucket screenshot]({{ site.baseurl }}/assets/s3/select-created-s3-bucket.png)
 
 Select the **Permissions** tab, then select **CORS configuration**.
 
-![Select S3 Bucket CORS Configuration screenshot](/assets/s3/select-s3-bucket-cors-configuration.png)
+![Select S3 Bucket CORS Configuration screenshot]({{ site.baseurl }}/assets/s3/select-s3-bucket-cors-configuration.png)
 
 Add the following CORS configuration into the editor, then hit **Save**.
 
@@ -69,6 +69,6 @@ Add the following CORS configuration into the editor, then hit **Save**.
 
 Note that you can edit this configuration to use your own domain or a list of domains when you use this in production.
 
-![Save S3 Bucket CORS Configuration screenshot](/assets/s3/save-s3-bucket-cors-configuration.png)
+![Save S3 Bucket CORS Configuration screenshot]({{ site.baseurl }}/assets/s3/save-s3-bucket-cors-configuration.png)
 
 Now that our S3 bucket is ready, let's get set up to handle user authentication.

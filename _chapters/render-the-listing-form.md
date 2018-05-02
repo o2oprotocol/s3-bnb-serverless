@@ -9,7 +9,7 @@ comments_id: 54
 
 Now that our container loads a note on `componentDidMount`, let's go ahead and render the form that we'll use to edit it.
 
-<img class="code-marker" src="/assets/s.png" />Replace our placeholder `render` method in `src/containers/Notes.js` with the following.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Replace our placeholder `render` method in `src/containers/Notes.js` with the following.
 
 ``` coffee
 validateForm() {
@@ -126,7 +126,7 @@ We are doing a few things here:
 
 To complete this code, let's add `isLoading` and `isDeleting` to the state.
 
-<img class="code-marker" src="/assets/s.png" />So our new initial state in the `constructor` looks like so.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />So our new initial state in the `constructor` looks like so.
 
 ``` javascript
 this.state = {
@@ -138,7 +138,7 @@ this.state = {
 };
 ```
 
-<img class="code-marker" src="/assets/s.png" />Let's also add some styles by adding the following to `src/containers/Notes.css`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Let's also add some styles by adding the following to `src/containers/Notes.css`.
 
 ``` css
 .Notes form {
@@ -151,7 +151,7 @@ this.state = {
 }
 ```
 
-<img class="code-marker" src="/assets/s.png" />Also, let's include the React-Bootstrap components that we are using here by adding the following to our header. And our styles, the `LoaderButton`, and the `config`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Also, let's include the React-Bootstrap components that we are using here by adding the following to our header. And our styles, the `LoaderButton`, and the `config`.
 
 ``` javascript
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
@@ -162,6 +162,6 @@ import "./Notes.css";
 
 And that's it. If you switch over to your browser, you should see the note loaded.
 
-![Notes page loaded screenshot](/assets/react/listing-page-loaded.png)
+![Notes page loaded screenshot]({{ site.baseurl }}/assets/react/listing-page-loaded.png)
 
 Next, we'll look at saving the changes we make to our note.

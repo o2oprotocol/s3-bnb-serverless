@@ -7,7 +7,7 @@ context: all
 comments_id: 150
 ---
 
-When we configured our AWS CLI in the [Configure the AWS CLI]({% link _chapters/configure-the-aws-cli.md %}) chapter, we used the `aws configure` command to set the IAM credentials of the AWS account we wanted to use to deploy our serverless application to.
+When we configured our AWS CLI in the [Configure the AWS CLI]({{ site.baseurl }}{% link _chapters/configure-the-aws-cli.md %}) chapter, we used the `aws configure` command to set the IAM credentials of the AWS account we wanted to use to deploy our serverless application to.
 
 These credentials are stored in `~/.aws/credentials` and are used by the Serverless Framework when we run `serverless deploy`. Behind the scenes Serverless uses these credentials and the AWS SDK to create the necessary resources on your behalf to the AWS account specified in the credentials.
 
@@ -17,7 +17,7 @@ In this chapter let's take a look at how you can work with multiple AWS credenti
 
 ### Create a New AWS Profile
 
-Let's say you want to create a new AWS profile to work with. Follow the steps outlined in the [Create an IAM User]({% link _chapters/create-an-iam-user.md %}) chapter to create an IAM user in another AWS account and take a note of the **Access key ID** and **Secret access key**.
+Let's say you want to create a new AWS profile to work with. Follow the steps outlined in the [Create an IAM User]({{ site.baseurl }}{% link _chapters/create-an-iam-user.md %}) chapter to create an IAM user in another AWS account and take a note of the **Access key ID** and **Secret access key**.
 
 To configure the new profile in your AWS CLI use:
 
@@ -118,7 +118,7 @@ There are a couple of things happening here.
 - We also defined `custom.myProfile`, which contains the AWS profiles we want to use to deploy for each stage. Just as before we want to use the `prodAccount` profile if we are deploying to stage `prod` and the `devAccount` profile if we are deploying to stage `dev`.
 - Finally, we set the `provider.profile` to `${self:custom.myProfile.${self:custom.myStage}}`. This picks the value of our profile depending on the current stage defined in `custom.myStage`.
 
-We used the concept of variables in Serverless Framework in this example. You can read more about this in the chapter on [Serverless Environment Variables]({% link _chapters/serverless-environment-variables.md %}).
+We used the concept of variables in Serverless Framework in this example. You can read more about this in the chapter on [Serverless Environment Variables]({{ site.baseurl }}{% link _chapters/serverless-environment-variables.md %}).
 
 Now, when you deploy to production, Serverless Framework is going to use the `prodAccount` profile. And the resources will be provisioned inside `prodAccount` profile user's AWS account.
 

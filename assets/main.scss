@@ -82,7 +82,7 @@ img.code-marker {
   margin-bottom: 2px;
   width: $width;
   height: $height;
-  background-image: url('/assets/change-marker.png');
+  background-image: url('{{ site.baseurl }}/assets/change-marker.png');
   background-size: $width $height;
   display: inline-block;
   vertical-align: middle; 
@@ -428,7 +428,7 @@ div.home ul.quotes li {
   &:nth-child(odd) {
     padding-left: 80px;
     background: {
-      image: url('/assets/left-quote-icon.png');
+      image: url('{{ site.baseurl }}/assets/left-quote-icon.png');
       repeat: no-repeat;
       size: 68px 50px;
       position: 0px 7px;
@@ -437,7 +437,7 @@ div.home ul.quotes li {
   &:nth-child(even) {
     padding-right: 77px;
     background: {
-      image: url('/assets/right-quote-icon.png');
+      image: url('{{ site.baseurl }}/assets/right-quote-icon.png');
       repeat: no-repeat;
       size: 68px 50px;
       position: right 7px;

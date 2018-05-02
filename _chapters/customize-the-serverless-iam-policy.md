@@ -7,7 +7,7 @@ context: all
 comments_id: 167
 ---
 
-Serverless Framework deploys using the policy attached to the IAM credentials in your AWS CLI profile. Back in the [Create an IAM User]({% link _chapters/create-an-iam-user.md %}) chapter we created a user that the Serverless Framework will use to deploy our project. This user was assigned **AdministratorAccess**. This means that Serverless Framework and your project has complete access to your AWS account. This is fine in trusted environments but if you are working as a part of a team you might want to fine-tune the level of access based on who is using your project.
+Serverless Framework deploys using the policy attached to the IAM credentials in your AWS CLI profile. Back in the [Create an IAM User]({{ site.baseurl }}{% link _chapters/create-an-iam-user.md %}) chapter we created a user that the Serverless Framework will use to deploy our project. This user was assigned **AdministratorAccess**. This means that Serverless Framework and your project has complete access to your AWS account. This is fine in trusted environments but if you are working as a part of a team you might want to fine-tune the level of access based on who is using your project.
 
 In this chapter we will take a look at how to customize the IAM Policy that Serverless Framework is going to use.
 
@@ -60,21 +60,21 @@ These can be defined and granted using a simple IAM policy.
 }
 ```
 
-![Simple IAM Policy template Screenshot](/assets/customize-iam-policy/ simple-iam-policy-template.png)
+![Simple IAM Policy template Screenshot]({{ site.baseurl }}/assets/customize-iam-policy/ simple-iam-policy-template.png)
 
-We can attach this policy to the IAM user we are creating by continuing from the **Attach existing policies directly** step in the [Create an IAM User]({% link _chapters/create-an-iam-user.md %}) chapter.
+We can attach this policy to the IAM user we are creating by continuing from the **Attach existing policies directly** step in the [Create an IAM User]({{ site.baseurl }}{% link _chapters/create-an-iam-user.md %}) chapter.
 
 Hit the **Create policy** button.
 
-![Select Create IAM Policy Screenshot](/assets/customize-iam-policy/select-create-iam-policy.png)
+![Select Create IAM Policy Screenshot]({{ site.baseurl }}/assets/customize-iam-policy/select-create-iam-policy.png)
 
 And hit **Select** in the **Create Your Own Policy** section.
 
-![Select Create your own IAM Policy Screenshot](/assets/customize-iam-policy/select-create-your-own-iam-policy.png)
+![Select Create your own IAM Policy Screenshot]({{ site.baseurl }}/assets/customize-iam-policy/select-create-your-own-iam-policy.png)
 
 Here fill pick a name for your new policy and paste the policy created above in the **Policy Document** field.
 
-![Create your own IAM Policy Screenshot](/assets/customize-iam-policy/create-your-own-iam-policy.png)
+![Create your own IAM Policy Screenshot]({{ site.baseurl }}/assets/customize-iam-policy/create-your-own-iam-policy.png)
 
 Finally, hit **Create Policy**. You can now chose this policy while creating your IAM user instead of the **AdministratorAccess** one that we had used before.
 

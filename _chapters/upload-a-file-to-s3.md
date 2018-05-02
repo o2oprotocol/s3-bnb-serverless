@@ -14,20 +14,20 @@ Let's now add an attachment to our note. The flow we are using here is very simp
 2. The file is uploaded to S3 under the user's folder and we get a key back. 
 3. Create a note with the file key as the attachment.
 
-We are going to use the Storage module that AWS Amplify has. If you recall, that back in the [Create a Cognito identity pool]({% link _chapters/create-a-cognito-identity-pool.md %}) chapter we allow a logged in user access to a folder inside our S3 Bucket. AWS Amplify stores directly to this folder if we want to *privately* store a file.
+We are going to use the Storage module that AWS Amplify has. If you recall, that back in the [Create a Cognito identity pool]({{ site.baseurl }}{% link _chapters/create-a-cognito-identity-pool.md %}) chapter we allow a logged in user access to a folder inside our S3 Bucket. AWS Amplify stores directly to this folder if we want to *privately* store a file.
 
 Also, just looking ahead a bit; we will be uploading files when a note is created and when a note is edited. So let's create a simple convenience method to help with that.
 
 
 ### Upload to S3
 
-<img class="code-marker" src="/assets/s.png" />Create a `src/libs/` directory for this.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Create a `src/libs/` directory for this.
 
 ``` bash
 $ mkdir src/libs/
 ```
 
-<img class="code-marker" src="/assets/s.png" />Add the following to `src/libs/awsLib.js`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Add the following to `src/libs/awsLib.js`.
 
 ``` coffee
 import { Storage } from "aws-amplify";
@@ -57,7 +57,7 @@ The above method does a couple of things.
 
 Now that we have our upload methods ready, let's call them from the create note method.
 
-<img class="code-marker" src="/assets/s.png" />Replace the `handleSubmit` method in `src/containers/NewNote.js` with the following.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Replace the `handleSubmit` method in `src/containers/NewNote.js` with the following.
 
 ``` javascript
 handleSubmit = async event => {
@@ -87,7 +87,7 @@ handleSubmit = async event => {
 }
 ```
 
-<img class="code-marker" src="/assets/s.png" />And make sure to include `s3Upload` by adding the following to the header of `src/containers/NewNote.js`.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />And make sure to include `s3Upload` by adding the following to the header of `src/containers/NewNote.js`.
 
 ``` javascript
 import { s3Upload } from "../libs/awsLib";

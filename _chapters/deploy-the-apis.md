@@ -10,7 +10,7 @@ comments_id: 28
 
 Now that our APIs are complete, let's deploy them.
 
-<img class="code-marker" src="/assets/s.png" />Run the following in your working directory.
+<img class="code-marker" src="{{ site.baseurl }}/assets/s.png" />Run the following in your working directory.
 
 ``` bash
 $ serverless deploy
@@ -22,7 +22,7 @@ If you have multiple profiles for your AWS SDK credentials, you will need to exp
 $ serverless deploy --aws-profile myProfile
 ```
 
-Where `myProfile` is the name of the AWS profile you want to use. If you need more info on how to work with AWS profiles in Serverless, refer to our [Configure multiple AWS profiles]({% link _chapters/configure-multiple-aws-profiles.md %}) chapter.
+Where `myProfile` is the name of the AWS profile you want to use. If you need more info on how to work with AWS profiles in Serverless, refer to our [Configure multiple AWS profiles]({{ site.baseurl }}{% link _chapters/configure-multiple-aws-profiles.md %}) chapter.
 
 Near the bottom of the output for this command, you will find the **Service Information**.
 
