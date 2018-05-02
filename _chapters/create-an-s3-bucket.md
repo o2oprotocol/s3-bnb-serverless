@@ -40,7 +40,7 @@ Buckets by default are not publicly accessible, so we need to change the S3 Buck
 
 ![Add AWS S3 Bucket permission screenshot](/assets/s3-bucket/add-bucket-policy.png)
 
-<img class="code-marker" src="/assets/s.png" />Add the following bucket policy into the editor. Where `notes-app-client` is the name of our S3 bucket. Make sure to use the name of your bucket here.
+<img class="code-marker" src="/assets/s.png" />Add the following bucket policy into the editor. Where `s3-bnb` is the name of our S3 bucket. Make sure to use the name of your bucket here.
 
 ``` json
 {
@@ -50,7 +50,7 @@ Buckets by default are not publicly accessible, so we need to change the S3 Buck
         "Effect":"Allow",
 	  "Principal": "*",
       "Action":["s3:GetObject"],
-      "Resource":["arn:aws:s3:::notes-app-client/*"]
+      "Resource":["arn:aws:s3:::s3-bnb/*"]
     }
   ]
 }
@@ -72,7 +72,7 @@ Select **Static website hosting**.
 
 Now select **Use this bucket to host a website** and add our `index.html` as the **Index Document** and the **Error Document**. Since we are letting React handle 404s, we can simply redirect our errors to our `index.html` as well. Hit **Save** once you are done.
 
-This panel also shows us where our app will be accessible. AWS assigns us a URL for our static website. In this case the URL assigned to me is `notes-app-client.s3-website-us-east-1.amazonaws.com`.
+This panel also shows us where our app will be accessible. AWS assigns us a URL for our static website. In this case the URL assigned to me is `s3-bnb.s3-website-us-east-1.amazonaws.com`.
 
 ![Edit static website hosting properties screenshot](/assets/s3-bucket/edit-static-web-hosting-properties.png)
 

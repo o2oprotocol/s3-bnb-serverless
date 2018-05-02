@@ -17,6 +17,7 @@ description: Free step-by-step guideline for creating full-stack apps with Serve
 ### Setting up the Serverless Backend
 
 - [Create a DynamoDB table]({% link _chapters/create-a-dynamodb-table.md %})
+- [Create an S3 bucket]({% link _chapters/create-an-s3-bucket.md %})
 - [Create an S3 bucket for file uploads]({% link _chapters/create-an-s3-bucket-for-file-uploads.md %})
 - [Create a Cognito user pool]({% link _chapters/create-a-cognito-user-pool.md %})
   - [Create a Cognito test user]({% link _chapters/create-a-cognito-test-user.md %})
@@ -73,7 +74,6 @@ description: Free step-by-step guideline for creating full-stack apps with Serve
 ### Deploying a React app on AWS
 
 - [Deploy the Frontend]({% link _chapters/deploy-the-frontend.md %})
-  - [Create an S3 bucket]({% link _chapters/create-an-s3-bucket.md %})
   - [Deploy to S3]({% link _chapters/deploy-to-s3.md %})
   - [Create a CloudFront distribution]({% link _chapters/create-a-cloudfront-distribution.md %})
   - [Set up your domain with CloudFront]({% link _chapters/setup-your-domain-with-cloudfront.md %})
